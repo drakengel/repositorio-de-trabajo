@@ -1,12 +1,12 @@
-<h1>Mi web personal</h1>
-<url>
-    <li><a href="/">Portada</a></li>
-    <li><a href="/about-me/">Acerca de</a></li>
-    <li><a href="/portafolio/">Portafolio</a></li>
-    <li><a href="/contact/">Contacto</a></li>
-</url>
+{% extends 'core/base.html' %}
+{%block title %}
+Portada
+{% endblock %}
 
+{% load static %}
 
+{% block content %}
 <h2>Portada</h2>
 
 <p>Bienvenido a mi web personal</p>
+{% endblock %}

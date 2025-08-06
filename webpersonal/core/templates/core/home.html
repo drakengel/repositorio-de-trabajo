@@ -1,9 +1,15 @@
 {% extends 'core/base.html' %}
-{%block title %}
+{% block title %}
 Portada
 {% endblock %}
 
-{% load static %}
+{% block background %}{% load static %}{% static 'core/img/industrial.jpg' %}{% endblock %}
+
+{% block headers %}
+        <h1>William Rojo</h1>
+        <span class="subheading">Ingeniero Industrial</span>
+{% endblock %}
+
 
 {% block content %}
 <h2>Portada</h2>

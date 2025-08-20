@@ -16,12 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core import views
+from core import views as core_views
+from portfolio import views as portfolio_views
+
+from django.conf import settings
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
+    path('', core_views.home, name='home'),
+    path('about/', core_views.about, name='about'),
     path('admin/', admin.site.urls),
-    path('portafolio/', views.portafolio, name='portafolio'),
-    path('contact/', views.contact, name='contact'),
+    path('portafolio/', portfolio_views.portafolio, name='portafolio'),
+    path('contact/', core_views.contact, name='contact'),
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
